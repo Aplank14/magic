@@ -9,10 +9,11 @@ import { HoursComponent } from './hours/hours.component';
 import { AdminComponent } from './admin/admin.component';
 
 // Material
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTableModule } from '@angular/material';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSortModule} from '@angular/material/sort';
+import {MatTableModule} from '@angular/material/table';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -28,8 +29,8 @@ import {MatInputModule} from '@angular/material/input';
     MatToolbarModule,
     MatTableModule,
     MatInputModule,
-    MatFormFieldModule
-  ],
+    MatIconModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,33 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
-export interface Entry {
-  date: string;
-  hours: number;
-  location: string;
-}
-
-const HOURS: Entry[] = [
-  {date:'8-1-22', hours:10, location:'Wea Ridge'},
+const data: Entry[] = [
+  { date: '3-3-4', hours: 10, location: 'wea ridge', students: 'hannah', description: 'some stuff' },
+  { date: '3-3-4', hours: 10, location: 'wea ridge', students: 'hannah', description: 'some stuff' },
+  { date: '3-3-4', hours: 10, location: 'wea ridge', students: 'hannah', description: 'some stuff' },
 ];
 
 @Component({
   selector: 'app-hours',
   templateUrl: './hours.component.html',
-  styleUrls: ['./hours.component.css']
+  styleUrls: ['./hours.component.css'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({height: '0px', minHeight: '0'})),
+      state('expanded', style({height: '*'})),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
-export class HoursComponent implements OnInit {
-  
-  displayedColumns: string[] = ['date', 'location', 'hours',];
-  dataSource = HOURS;
-  student: {
-    name: string,
-    hours: number,
-    email: string
+export class HoursComponent {
+  dataSource = data;
+  columnsToDisplay = ['date', 'location', 'hours', 'star'];
+  expandedElement: Entry | null;
+  print(){
+    console.log("hello");
   };
+}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export interface Entry {
+  date: string;
+  hours: number;
+  location: string;
+  students: string;
+  description: string;
 }

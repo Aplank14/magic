@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 
@@ -8,7 +8,8 @@ export interface Entry {
 }
 
 const HOURS: Entry[] = [
-  {student:'Andy', hours:10},
+  {student: 'Andy', hours: 1},
+  {student: 'Andy', hours: 10},
 ];
 
 @Component({
@@ -17,11 +18,13 @@ const HOURS: Entry[] = [
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  displayedColumns: string[] = ['student','hours'];
-  dataSource = new MatTableDataSource(HOURS);
+  displayedColumns: string[] = ['student', 'hours'];
+  dataSource: MatTableDataSource<Entry>;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor() { }
+  constructor() {
+    this.dataSource = new MatTableDataSource(HOURS);
+  }
 
   ngOnInit() {
   }
