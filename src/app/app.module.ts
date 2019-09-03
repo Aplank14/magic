@@ -7,20 +7,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { HoursComponent } from './hours/hours.component';
 import { AdminComponent } from './admin/admin.component';
+import { EditorComponent } from './editor/editor.component';
+
+import { FormsModule } from '@angular/forms';
 
 // Material
-import {MatInputModule} from '@angular/material/input';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSortModule} from '@angular/material/sort';
-import {MatTableModule} from '@angular/material/table';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HoursComponent,
-    AdminComponent
+    AdminComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +37,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatToolbarModule,
     MatTableModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HoursComponent } from './hours/hours.component';
 import { AdminComponent } from './admin/admin.component';
+import { EditorComponent } from './editor/editor.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'hours', component: HoursComponent },
+  { path: 'edit', component: EditorComponent },
   { path: 'admin', component: AdminComponent },
   /*{
     path: 'heroes',

@@ -1,0 +1,52 @@
+<div class="container py-3" color="background">
+    <mat-card class="card">
+        <mat-card-header>
+            <mat-card-title>Edit</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form class="">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field class="w-100">
+                                <input name="hours" type="number" matInput placeholder="Hours" [(ngModel)]="hours">
+                            </mat-form-field>
+                        </div>
+                        <div class="col">
+                            <mat-form-field>
+                                <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <mat-form-field class="w-100">
+                        <input name="location" matInput placeholder="Location" [(ngModel)]="location">
+                        <button mat-button *ngIf="location" matSuffix mat-icon-button aria-label="Clear" (click)="location=''">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </mat-form-field>
+                    <mat-form-field class="w-100">
+                        <input name="students" matInput placeholder="Students" [(ngModel)]="students">
+                        <button mat-button *ngIf="students" matSuffix mat-icon-button aria-label="Clear" (click)="students=''">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </mat-form-field>
+                    <mat-form-field class="w-100">
+                        <textarea name="description" matInput placeholder="What did you accomplish?" [(ngModel)]="description">
+                        </textarea>
+                        <button mat-button *ngIf="description" matSuffix mat-icon-button aria-label="Clear" (click)="description=''">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary">Submit</button>
+
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

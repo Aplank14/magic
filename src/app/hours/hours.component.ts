@@ -23,9 +23,9 @@ export class HoursComponent {
   dataSource = data;
   columnsToDisplay = ['date', 'location', 'hours', 'star'];
   expandedElement: Entry | null;
-  print(){
-    console.log("hello");
-  };
+  print() {
+    console.log('hello');
+  }
 }
 
 export interface Entry {
