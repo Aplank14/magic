@@ -19,8 +19,10 @@
 
         <ng-container matColumnDef="star" stickyEnd>
             <th mat-header-cell *matHeaderCellDef></th>
-            <td mat-cell *matCellDef="let element">
-                <mat-icon>edit</mat-icon>
+            <td mat-cell *matCellDef="let entry">
+                <a routerLink="/edit/{{entry.id}}">
+                    <mat-icon>edit</mat-icon>
+                </a>
             </td>
         </ng-container>
 

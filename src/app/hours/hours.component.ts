@@ -1,10 +1,12 @@
 import {Component} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import { Entry } from '../models/entry';
+import { HoursService } from '../hours.service';
 
 const data: Entry[] = [
-  { date: '3-3-4', hours: 10, location: 'wea ridge', students: 'hannah', description: 'some stuff' },
-  { date: '3-3-4', hours: 10, location: 'wea ridge', students: 'hannah', description: 'some stuff' },
-  { date: '3-3-4', hours: 10, location: 'wea ridge', students: 'hannah', description: 'some stuff' },
+  { id: '1', date: '3-3-4', hours: 10, location: 'wea ridge', students: 'hannah', description: 'some stuff' },
+  { id: '1', date: '3-3-4', hours: 10, location: 'wea ridge', students: 'hannah', description: 'some stuff' },
+  { id: '1', date: '3-3-4', hours: 10, location: 'wea ridge', students: 'hannah', description: 'some stuff' },
 ];
 
 @Component({
@@ -26,12 +28,8 @@ export class HoursComponent {
   print() {
     console.log('hello');
   }
-}
 
-export interface Entry {
-  date: string;
-  hours: number;
-  location: string;
-  students: string;
-  description: string;
+  constructor(private hoursService: HoursService) {
+
+  }
 }
