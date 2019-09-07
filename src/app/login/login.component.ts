@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.authService.isLoggedIn = true;
+    this.authService.isAdmin = true;
     if ( false ) {
       this.authService.isAdmin = true;
       this.router.navigate(['/admin']);

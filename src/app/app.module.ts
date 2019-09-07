@@ -9,6 +9,7 @@ import { HoursComponent } from './hours/hours.component';
 import { AdminComponent } from './admin/admin.component';
 import { EditorComponent } from './editor/editor.component';
 
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 // Material
@@ -42,7 +43,8 @@ import { MatNativeDateModule } from '@angular/material';
     MatButtonModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

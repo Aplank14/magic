@@ -5,13 +5,14 @@ import { HoursComponent } from './hours/hours.component';
 import { AdminComponent } from './admin/admin.component';
 import { EditorComponent } from './editor/editor.component';
 import { AuthGuard } from './auth/auth.guard';
+import { AdminGuard } from './auth/admin.guard';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'hours', component: HoursComponent },
-  { path: 'edit/new', component: EditorComponent },
-  { path: 'edit/:id', component: EditorComponent, data: {entry : ''} },
-  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
+  { path: 'hours', component: HoursComponent, canActivate: [AuthGuard] },
+  { path: 'edit/new', component: EditorComponent, canActivate: [AuthGuard]},
+  { path: 'edit/:id', component: EditorComponent, canActivate: [AuthGuard]},
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard, AdminGuard] },
   /*{
     path: 'heroes',
     component: HeroListComponent,

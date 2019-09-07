@@ -6,29 +6,21 @@ import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class AdminGuard implements CanActivate {
 
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      const url: string = state.url;
-      return this.checkLogin(url);
+    return this.checkAdmin();
   }
 
-
-  checkLogin(url: string): boolean {
-
-    if (this.authService.isLoggedIn) {
-      return true;
+  checkAdmin(): boolean {
+    if ( this.authService.isAdmin === false) {
+      return false;
     }
-
-    // Store the attempted URL for redirecting
-    this.authService.redirectUrl = url;
-
-    // Navigate to the login page with extras
-    this.router.navigate(['/login']);
-    return false;
+    return true;
   }
+
 }
